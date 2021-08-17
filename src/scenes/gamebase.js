@@ -13,6 +13,11 @@ export class GameBase extends Phaser.Scene
         this.ball = new Ball(this,400,150);
     }
 
+    init(data)
+    {
+        this.indexLevel = data.indexLevel;
+    }
+
     create()
     {
         this.physics.world.setBoundsCollision(true,true,true,false);
@@ -36,13 +41,13 @@ export class GameBase extends Phaser.Scene
         if(this.score>=MAX_POINTS)
         {
             this.scene.pause();
-            this.scene.start('level-win');
+            this.scene.start('level-win',{indexLevel:this.indexLevel});
         }
 
         if(this.ball.isLost())
         {
             this.scene.pause();
-            this.scene.start('gameover');
+            this.scene.start('gameover',{indexLevel:this.indexLevel});
         }
 
         this.platform.updatePosition(this.cursors);

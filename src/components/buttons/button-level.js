@@ -11,7 +11,7 @@ export class ButtonLevel extends Button
     doClick()
     {
         this.relatedScene.sound.add('start-game-FX').play();
-        this.relatedScene.scene.start('game-base');
+        this.relatedScene.scene.start('game-base',{indexLevel:this.index});
         console.log(`Load Level: ${this.index}`);
     }
 }

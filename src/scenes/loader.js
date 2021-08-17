@@ -13,7 +13,7 @@ export class Loader extends Phaser.Scene
 
             progress.clear();
             progress.fillStyle(0xffffff, 1);
-            progress.fillRect(100, 250, 600 * value, 60);
+            progress.fillRect(100, 250, 600 * value, 40);
 
         });
 

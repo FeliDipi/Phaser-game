@@ -2,16 +2,21 @@ import { Button } from "./button.js";
 
 export class ButtonRestart extends Button
 {
-    constructor(scene,x,y,levelIndex)
+    constructor(scene,x,y)
     {
         super(scene,'reset-button',x,y);
-        this.index = levelIndex;
+    }
+
+    create(indexLevel)
+    {
+        super.create();
+        this.index = indexLevel;
     }
 
     doClick()
     {
         this.relatedScene.sound.add('start-game-FX').play();
-        this.relatedScene.scene.start('game-base');
+        this.relatedScene.scene.start('game-base',{indexLevel:this.index});
         console.log(`reset level: ${this.index}`);
     }
 }

@@ -10,11 +10,17 @@ export class LevelWin extends Phaser.Scene
         this.buttonNext = new ButtonNext(this,450,400);
     }
 
+    init(data)
+    {
+        this.index = data.indexLevel;
+    }
+
     create()
     {
         this.background = this.add.image(400,250,'background');
+        this.levelWin = this.add.image(400,50,'winlevel').setScale(0.5);
         this.sound.add('win-level-FX').play();
         this.buttonHome.create();
-        this.buttonNext.create();
+        this.buttonNext.create(this.index);
     }
 }
