@@ -11,7 +11,7 @@ export class Platform
 
     create()
     {
-        this.initPlatform = this.relatedScene.physics.add.image(this.x,this.y,'platform').setImmovable();
+        this.initPlatform = this.relatedScene.physics.add.image(this.x,this.y,'platform').setScale(0.5).setImmovable();
         this.initPlatform.body.allowGravity = false;
         this.initPlatform.setCollideWorldBounds(true);
     }

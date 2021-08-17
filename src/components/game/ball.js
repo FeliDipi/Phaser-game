@@ -11,7 +11,7 @@ export class Ball
 
     create()
     {
-        this.initBall = this.relatedScene.physics.add.image(this.x,this.y,'ball').setScale(0.2);
+        this.initBall = this.relatedScene.physics.add.image(this.x,this.y,'ball').setScale(0.1);
         this.initBall.body.allowGravity = false;
         this.initBall.setBounce(1);
         this.initBall.setCollideWorldBounds(true);
