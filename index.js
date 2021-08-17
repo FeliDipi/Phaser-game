@@ -1,3 +1,4 @@
+import { Loader } from "./src/scenes/loader.js";
 import { Home } from "./src/scenes/home.js"
 import { Levels } from "./src/scenes/levels.js";
 import { GameOver } from "./src/scenes/gameover.js";
@@ -24,7 +25,7 @@ const config =
         mode:Phaser.Scale.FIT,
         autoCenter: Phaser.Scale.CENTER_BOTH
     },
-    scene: [Home,Levels,GameBase,LevelWin,GameOver,GameWin]
+    scene: [Loader,Home,Levels,GameBase,LevelWin,GameOver,GameWin]
 }
 
 const game = new Phaser.Game(config);
